@@ -3,6 +3,5 @@ datetime
 streamlit
 pandas
 numpy
-mysqlclient==2.2.4
+pymysql 
 plotly
-SQLAlchemy==2.0.25
