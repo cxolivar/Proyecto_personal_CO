@@ -3,6 +3,5 @@ streamlit
 pandas
 numpy
 timedelta
-mysql.conector
 MySQL
 plotly.graph_objects
