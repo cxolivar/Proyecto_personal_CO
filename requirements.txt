@@ -9,3 +9,4 @@ SQLAlchemy
 mysql.connector 
 mysql-connector-python
 yfinance
+matplotlib
