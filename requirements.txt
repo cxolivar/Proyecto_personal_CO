@@ -2,7 +2,7 @@ pip==24.3.1
 datetime
 streamlit
 pandas
-numpy
-pymysql 
+numpy 
 plotly
-mysql.connector
+mysqlclient
+SQLAlchemy
