@@ -5,4 +5,4 @@ pandas
 numpy
 mysqlclient==2.2.4
 plotly
-mysql-connector-python==9.0.0
+SQLAlchemy==2.0.25
