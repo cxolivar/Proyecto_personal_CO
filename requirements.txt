@@ -4,4 +4,4 @@ pandas
 numpy
 timedelta
 MySQL
-plotly.graph_objects
+plotly
