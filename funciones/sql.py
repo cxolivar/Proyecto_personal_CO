@@ -12,6 +12,8 @@ import pandas as pd
 
 # conexion con la bd
 database=mysql.connector.connect(
+    dialect = "mysql"
+    driver = "pymysql"
     host="mysql-3a922659-camiloaod.j.aivencloud.com",
     user="avnadmin",
     passwd="AVNS_ppnx6jFf5FGTQwyEUjZ",
