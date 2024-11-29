@@ -2,5 +2,5 @@ datetime
 streamlit
 pandas
 numpy
-MySQL
+mysqlclient==2.2.4
 plotly
