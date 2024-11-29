@@ -6,3 +6,4 @@ numpy
 plotly
 mysqlclient
 SQLAlchemy
+mysql.connector 
