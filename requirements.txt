@@ -7,3 +7,4 @@ plotly
 mysqlclient
 SQLAlchemy
 mysql.connector 
+mysql-connector-python
