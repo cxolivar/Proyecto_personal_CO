@@ -1,4 +1,5 @@
 
+
 import yfinance as yf
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -181,6 +182,8 @@ def datos_conjunto(simbolos,base):
         
     return todo
     
+
+
 def info_accion(simbolo,base):
     
     
@@ -337,6 +340,46 @@ def valor_dolar(base):
     return a,precio_promedio_compra
 
 
+
+def orden_inversion_cele(meta,base):
+    meta=meta
+    politica=pd.DataFrame({"TICKER":["IVV","QQQ","MSTR"],
+                           "POLITICA":[0.45,0.45,0.1]})   
+    
+    
+    #faltante
+    politica["FALTANTE"]=0
+    aux=[]
+    for ti in politica["TICKER"]:
+        pol=politica[politica["TICKER"]==ti]["POLITICA"][politica.loc[politica["TICKER"]==ti].index[0]]          
+        bi=faltante(ti, base, meta,pol)    
+        aux.append(bi)
+    
+    politica["FALTANTE"]=aux
+    
+ 
+    #rendimiento    
+    politica["RENTABILIDAD"]=0
+    aux=[]
+    for ti in politica["TICKER"]:
+        pol=politica[politica["TICKER"]==ti]["POLITICA"][politica.loc[politica["TICKER"]==ti].index[0]]          
+        total_acciones,total_monto,total_dividendos,precio_compra,rentabilidad,precio_actual=info_accion(ti,base) 
+        aux.append(rentabilidad)
+    
+    politica["RENTABILIDAD"]=aux 
+ 
+    df_ordenado = politica.sort_values(by='RENTABILIDAD')
+    B=df_ordenado["TICKER"].to_list()
+    
+    df_ordenado_faltante=df_ordenado[df_ordenado["FALTANTE"]>5]
+    invertir=df_ordenado_faltante.head(1)["TICKER"].to_list()
+    
+    invertir.extend(B)
+    simbolos = []
+    for elemento in invertir:
+        if elemento not in simbolos:
+            simbolos.append(elemento)
+    return simbolos,politica
 
 
 
