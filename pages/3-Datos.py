@@ -31,14 +31,18 @@ c1,c2=st.columns(2)
 with c1:
     with st.form("my_form"):
         st.header("Agregar Movimiento")
-        ticker = st.text_input("Ticker")
+        inversor=st.selectbox("Seleccione inveror",["Camilo","Celeste"])
+        
+        
+        ticker = st.selectbox("Ticker",["BITO","SCHD","JEPQ","NVDY","IDV","QQQ","IVV","MSTR"],key="camilo")
+            
         operacion = st.selectbox('Selecciona una opción', operaciones)
         monto=st.number_input("monto")
         unidades=st.number_input("acciones")
         submitted = st.form_submit_button("Agregar")
     
         if submitted:
-            sql.insertar_inversiones(ticker,operacion,monto,unidades)
+            sql.insertar_inversiones(ticker,inversor,operacion,monto,unidades)
             st.rerun()
             
 
