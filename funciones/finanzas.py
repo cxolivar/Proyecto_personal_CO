@@ -395,8 +395,16 @@ def caja_camilo(base):
     
     return suma-resta+9680.71999324500000
 
-
-
+def caja_celeste(base):
+    
+    filtro=["DIVIDENDO","AUMENTO FONDO","VENTA","INTERESES"]
+    suma=sum(base[base["OPERACION"].isin(filtro)]["MONTO"])
+    
+    
+    filtro=["COMPRA"]
+    resta=sum(base[base["OPERACION"].isin(filtro)]["MONTO"])   
+    
+    return suma-resta
 
 
 
