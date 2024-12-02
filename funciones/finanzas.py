@@ -386,7 +386,7 @@ def orden_inversion_cele(meta,base):
 
 def caja_camilo(base):
     
-    filtro=["DIVIDENDO","AUMENTO FONOD","VENTA","INTERESES"]
+    filtro=["DIVIDENDO","AUMENTO FONDO","VENTA","INTERESES"]
     suma=sum(base[base["OPERACION"].isin(filtro)]["MONTO"])
     
     
