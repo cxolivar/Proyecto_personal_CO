@@ -51,10 +51,10 @@ def ver_datos_tabla(nombre):
 
     
 # insertar registros en una tabla
-def insertar_inversiones(ticker,operacion,monto,unidades):
+def insertar_inversiones(ticker,inversor,operacion,monto,unidades):
 
     sql = "INSERT INTO inversiones (ticker,inversor, operacion, monto, unidades, fecha) VALUES (%s,%s, %s, %s, %s, CURRENT_DATE)"
-    values = (ticker,"Camilo", operacion, monto, unidades, )
+    values = (ticker,inversor, operacion, monto, unidades, )
     cursor.execute(sql, values)    
     database.commit()
 
@@ -114,14 +114,3 @@ def insertar_politica(ticker,meta):
     values = (ticker,meta, )
     cursor.execute(sql, values)    
     database.commit()
-
-
-# insertar_politica("SCHD",10)
-
-# ver_tablas()
-# borrar_tabla("inversiones")
-# borrar_tabla("inversiones2")
-
-# crear_tabla()
-# insertar_df_masico()
-# ver_datos_tabla("inversiones")
