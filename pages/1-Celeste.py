@@ -43,6 +43,7 @@ def main():
     columnas=math.ceil(len(simbolos)/2)
     faltante=sum(politica[politica["FALTANTE"]>0]["FALTANTE"])
     dias_habiles=finanzas.dias_habiles_hasta_fin_ano()
+    caja=caja_celeste(base)
     
     c1,c2=st.columns(2)
     
@@ -53,6 +54,7 @@ def main():
         st.text(f"Invertir: {faltante/dias_habiles:.0f}    Meta: {meta}")
         st.text(f"Precio Dolar: {precio_dolar*1.0049:.0f}")
         st.text(f"Precio compra Dolar: {precio_promedio_compra:.0f}")
+        st.text(f"Caja: {caja:.0f}")
         
 
         
