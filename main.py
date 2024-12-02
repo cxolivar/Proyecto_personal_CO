@@ -38,6 +38,7 @@ def main():
     
     meta=15300
     simbolos,politica=finanzas.orden_inversion(meta,base)
+    caja=caja_camilo(base)
     columnas=math.ceil(len(simbolos)/2)
     faltante=sum(politica[politica["FALTANTE"]>0]["FALTANTE"])
     dias_habiles=finanzas.dias_habiles_hasta_fin_ano()
@@ -51,7 +52,7 @@ def main():
         st.text(f"Invertir: {faltante/dias_habiles:.0f}")
         st.text(f"Precio Dolar: {precio_dolar*1.0049:.0f}")
         st.text(f"Precio compra Dolar: {precio_promedio_compra:.0f}")
-        st.text("")
+        st.text(f"Caja: {caja:.0f}")
 
         
         
