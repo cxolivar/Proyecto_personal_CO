@@ -384,7 +384,16 @@ def orden_inversion_cele(meta,base):
             simbolos.append(elemento)
     return simbolos,politica
 
-
+def caja_camilo(base):
+    
+    filtro=["DIVIDENDO","AUMENTO FONOD","VENTA","INTERESES"]
+    suma=sum(base[base["OPERACION"].isin(filtro)]["MONTO"])
+    
+    
+    filtro=["COMPRA"]
+    resta=sum(base[base["OPERACION"].isin(filtro)]["MONTO"])   
+    
+    return suma-resta+9680.71999324500000
 
 
 
