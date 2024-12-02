@@ -43,7 +43,7 @@ def main():
     columnas=math.ceil(len(simbolos)/2)
     faltante=sum(politica[politica["FALTANTE"]>0]["FALTANTE"])
     dias_habiles=finanzas.dias_habiles_hasta_fin_ano()
-    caja=caja_celeste(base)
+    caja=finanzas.caja_celeste(base)
     
     c1,c2=st.columns(2)
     
