@@ -38,7 +38,7 @@ def main():
     
     meta=15300
     simbolos,politica=finanzas.orden_inversion(meta,base)
-    caja=caja_camilo(base)
+    caja=finanzas.caja_camilo(base)
     columnas=math.ceil(len(simbolos)/2)
     faltante=sum(politica[politica["FALTANTE"]>0]["FALTANTE"])
     dias_habiles=finanzas.dias_habiles_hasta_fin_ano()
