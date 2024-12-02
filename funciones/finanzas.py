@@ -185,9 +185,12 @@ def datos_conjunto(simbolos,base):
 
 
 def info_accion(simbolo,base):
+
+    stock = yf.Ticker(simbolo)
+    todays_data = stock.history(period="1d")
+    precio_actual = todays_data['Close'][0]
     
-    
-    precio_actual=obtener_precios_periodo(simbolo, datetime.now().date(), datetime.now().date()+timedelta(days=1)).reset_index()["Close"][0]
+    #precio_actual=obtener_precios_periodo(simbolo, datetime.now().date(), datetime.now().date()+timedelta(days=1)).reset_index()["Close"][0]
     total_acciones=sum(base[(base["TICKER"]==simbolo)&((base["OPERACION"]=="COMPRA"))]["UNIDADES"])
     total_monto=sum(base[(base["TICKER"]==simbolo)&((base["OPERACION"]=="COMPRA"))]["MONTO"])
     total_dividendos=sum(base[(base["TICKER"]==simbolo)&((base["OPERACION"]=="DIVIDENDO"))]["MONTO"])
