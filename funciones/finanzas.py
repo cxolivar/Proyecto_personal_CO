@@ -393,7 +393,7 @@ def caja_camilo(base):
     filtro=["COMPRA"]
     resta=sum(base[base["OPERACION"].isin(filtro)]["MONTO"])   
     
-    return suma-resta+9680.71999324500000
+    return suma-resta+9680.71999324500000-7316
 
 def caja_celeste(base):
     
