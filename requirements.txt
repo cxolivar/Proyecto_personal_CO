@@ -6,8 +6,8 @@ numpy
 plotly
 mysqlclient
 SQLAlchemy
-mysql.connector
-mysql-connector-python
+mysql.connector==9.0.0
+#mysql-connector-python
 yfinance
 matplotlib
 seaborn
